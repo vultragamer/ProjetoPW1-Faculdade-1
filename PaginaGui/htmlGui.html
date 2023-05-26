@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="externo.css">
+    <script src="js.js"></script>  
+
+
+    <title>Pokémon Ruby & Sapphire (2002) + Emerald (2004)</title>
+</head>
+<body>
+
+    
+    <header>
+    <h1>Pokémon Ruby & Sapphire (2002) + Emerald (2004)</h1>
+    </header>
+    <div id="imgg">
+    <div id="containerImagem">
+       
+        <img src="ImagensGui/1.jpg" class="ativa ani1">
+        <img src="ImagensGui/2.jpg" class="ani1">
+        <img src="ImagensGui/3.png" class="ani1">
+        <img src="ImagensGui/4.jpg" class="ani1">
+        <img src="ImagensGui/5.png" class="ani1">
+        <img src="ImagensGui/6.png" class="ani1">
+    </div>
+    </div>
+    <div id="sinopse">
+    <p >Pokémon Ruby e Pokémon Sapphire (ポケットモンスター ルビー&サファイア Poketto Monsutā Rubī & Safaia?, tradução: Monstros de Bolso Rubi & Safira) são dois jogos que correspondem à terceira geração da série Pokémon. Desenvolvidos pela Game Freak e publicados pela Nintendo para Game Boy Advance, foram lançados no Japão no final de 2002 e internacionalmente em 2003. Pokémon Emerald, uma versão especial do jogo, foi lançada dois anos depois. Um remake dos dois jogos, intitulado Omega Ruby e Alpha Sapphire, foi lançado para Nintendo 3DS em novembro de 2014.[2]</p>
+    <p id="textoBotao">Deseja saber mais informações sobre os jogos ? Clique no botão abaixo!</p>
+
+    <button onclick="mudarPagina()" id="botãoMaisInfo" > Mais informações</button>
+    </div>
+    <div id="infoAnimation">
+    <p>Aqui esta algumas informações sobre os  itens dos jogos em animações!</p>
+    <div id="containerSprite">
+   <img  id="sp11" src="ImagensGui/s1.png">   
+   <img  id="sp22" src="ImagensGui/sprite2_1.png">   
+   <img  id="sp33" src="ImagensGui/sprite3_1.png">   
+    </div>
+    <div id="buttons">
+       
+    <button id="bt_left" onclick="mudarImagemsp1()">CLIQUE</button>
+    <button id="bt" onclick="mudarImagemsp2()">CLIQUE</button>
+    <button id="bt_right" onclick="mudarImagemsp3()">CLIQUE</button>
+</div>
+    </div>
+    
+        <p id="identidade">Guilherme Vasconcellos Baldesin FHO - Araras</p>
+   
+     
+    
+     <script>
+//1° animação
+var proximaImagem = 1;//guarda a posição da imagem que deve entrar na tela, no caso é a imagem da posição 1, pois a imagem 0 já está visível na tela
+var zIndexAtual = 0;//usado para criar um aumento progressivo no z-index
+var imagens = document.getElementById("containerImagem").children;//pega todos os nodos filhos da div #container, ou seja, nossa coleção de imagens
+
+function avancarImagem(){
+    imagem = imagens[proximaImagem];//armazena a proxima imagem na fila em uma variável
+    imagem.style.zIndex = ++zIndexAtual;//aumenta o índice do z-index e atribui à próxima imagem da fila
+    imagem.style.marginLeft = "0%";//reseta a margem da imagem, fazendo ela entrar na tela
+
+    proximaImagem++;//ajusta o índice que aponta a próxima imagem
+
+    //caso o índice tenha alcançado o fim da fila, resetá-lo
+    if(proximaImagem >= imagens.length){
+        proximaImagem = 0;
+    }
+
+    //aqui está o truque para fazer com que as imagens que já passaram voltem para fora da área visível
+    //o tempo de intervalo está aqui para que isso ocorra depois que a imagem ficou atrás da nova imagem da fila
+    setTimeout(resetarImagens,500);
+}
+
+function resetarImagens(){
+    imagemVisivel = proximaImagem -1;
+
+    //se o índice alcançou o início da fila, voltar para o final
+    if(imagemVisivel < 0){
+        //o menos 1 está aqui pois o parâmetro length retorna o total de itens no array (no caso, 3)
+        //precisamos da posição do último item do array (sempre é length-1)
+        imagemVisivel = imagens.length - 1;
+    }
+
+    //retorna todas as imagens à sua posição original, menos a imagem visível
+    for(var i = 0; i < imagens.length; i++){
+        if(i != imagemVisivel){
+            imagens[i].style.marginLeft = "100%";
+        }
+    }
+}
+
+var intervalo = setInterval(avancarImagem,2250);
+
+//fim primeiro animação
+
+     </script>
+</body>
+</html>

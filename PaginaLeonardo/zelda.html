@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/the-wild-breath-of-zelda');
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            padding-bottom: 100px; /* Espaço para o botão no final da página */
+        }
+
+        #video-container {
+            position: relative;
+            height: 0;
+            padding-bottom: 56.25%; /* Proporção de aspecto 16:9 para o vídeo */
+        }
+
+        #video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+            z-index: 1;
+        }
+
+        #play-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <title>THE LEGEND OF ZELDA</title>
+</head>
+
+<body>
+    <header>
+        <h1>THE LEGEND OF ZELDA</h1>
+
+        <strong>
+            <p>"The Legend of Zelda" é uma série de jogos eletrônicos de ação e aventura que foi criada por Shigeru Miyamoto e Takashi Tezuka, desenvolvida e publicada pela Nintendo.<br>
+                O jogo original foi lançado em 1986 e desde então a série se tornou uma das mais icônicas e influentes na indústria dos videogames.</p>
+        </strong>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Bem vindo a Hyrule!</h2>
+        <h3>Explore o mágico mundo de Hyrule, cheio de aventuras, quebra-cabeças e batalhas épicas.</h3>
+
+        <strong>
+            <p>O cenário de "The Legend of Zelda" é geralmente o reino de Hyrule, um mundo de fantasia repleto de locais misteriosos, dungeons, florestas, montanhas, rios e vilas habitadas por uma variedade de personagens. <br> O jogador controla Link em uma perspectiva de terceira pessoa, explorando o mundo, resolvendo quebra-cabeças, lutando contra inimigos e chefes, além de encontrar itens e equipamentos úteis ao longo do caminho. </p>
+        </strong>
+
+        <div class="gallery">
+            <img src="Imagens/zelda1.jpg" alt="Imagem 1">
+            <img src="Imagens/zelda2.jpg" alt="Imagem 2">
+            <img src="Imagens/zelda3.jpg" alt="Imagem 3">
+        </div>
+
+        <h2>Sinopse</h2>
+        <strong>
+            <p>A história da série de jogos The Legend of Zelda não segue um padrão fixo, mas há elementos recorrentes que se estabeleceram ao longo dos jogos. O padrão geralmente envolve um jovem herói chamado Link, a princesa Zelda e o vilão Ganondorf (ou algum outro antagonista relacionado). <br>
+
+                A trama muitas vezes gira em torno da busca de Link para derrotar o mal e salvar a Princesa Zelda e o reino de Hyrule. Isso geralmente envolve a obtenção de itens e poderes especiais, a exploração de masmorras e o enfrentamento de chefes desafiadores.</p>
+        </strong>
+
+        <div id="video-container"></div>
+        <div id="video-overlay">
+            <button id="play-button">It's danger to go alone!</button>
+        </div>
+
+        <script>
+            var playButton = document.getElementById('play-button');
+            var videoContainer = document.getElementById('video-container');
+            var videoOverlay = document.getElementById('video-overlay');
+
+            playButton.addEventListener('click', function () {
+                videoContainer.innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/IrAn5m4I-ek?start=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                videoOverlay.style.display = 'none';
+            });
+
+            
+        </script>
+
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2023 The Legend of Zelda Leonardo de Lima Mathias RA 112278</p>
+    </footer>
+</body>
+
+</html>

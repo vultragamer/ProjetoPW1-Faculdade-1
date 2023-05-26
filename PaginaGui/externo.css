@@ -1,0 +1,170 @@
+
+header{
+    width: 90%;
+    margin: auto;
+   
+  
+}
+
+header h1{
+    background-color: rgb(18, 59, 55);
+    color: white;   
+    padding: 30px 0px 40px 20px;
+    border-radius: 5px;
+   
+    
+    }
+    #imgg{
+        width: 90%;
+        
+        background-color: rgb(34, 112, 108);
+        margin: auto;
+        border-radius: 5px;
+       
+       
+    }
+    #containerImagem{  
+         width: 270px;
+        height: 150px;
+        margin:auto;
+        margin-top: 25px;
+        border-radius: 5px;
+       
+        
+    
+    }
+    
+
+    .ani1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin-left: 100%;
+    
+        -webkit-transition: margin-left 500ms ease-in;
+        -moz-transition: margin-left 500ms ease-in;
+        -o-transition: margin-left 500ms ease-in;
+        transition: margin-left 500ms ease-in;
+    }
+div{
+    overflow:hidden;
+    position: relative;
+    width:350px;
+    height:200px;
+}
+.ativa{
+    margin-left:0%;
+}
+body{
+    background-color: rgb(31, 81, 90);
+    
+}
+
+#sinopse{
+    width: 90%;
+    margin: auto;
+    padding:0px 0px 100px 0px;
+    background-color: rgb(33, 110, 103);
+    color: aliceblue;
+    margin-top: 25px;
+    border-radius: 5px;
+}
+#sinopse p{
+    padding: 10px;
+}
+#textoBotao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    margin: 0;
+  padding: 0;
+ 
+}
+#botãoMaisInfo{
+    width: 200px;
+    height: 40px;
+    background-color: blueviolet;
+    border-radius: 10px;
+    border-color: azure;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#infoAnimation{
+ width: 90%;
+ margin: auto;
+ margin-top: 25px;
+ height: 280px;
+ background-color: rgb(27, 90, 84);
+ border-radius: 5px;
+ text-align: center;
+ 
+
+}
+
+
+
+#containerSprite {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    height: 130px;
+}
+
+
+#sp11, #sp22, #sp33 {
+    width: 100px;
+    height: 100px;
+}
+
+#sp11 {
+    justify-self: flex-start;
+}
+
+#sp22 {
+    justify-self: center;
+}
+
+#sp33 {
+    justify-self: flex-end;
+}
+
+#buttons {
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+  #bt_left {
+   float: left;
+    margin-left: 15px;
+    margin-bottom: 30px;
+  }
+  
+  #bt{ display: inline-block;
+}
+  #bt_right {
+    float: right;
+    margin-right: 15px;
+
+  }
+
+  #identidade{
+    background-color:rgb(15, 40, 44);
+    color: aliceblue;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 15px 0px 15px 10px
+    
+  }
+ 
+  
+

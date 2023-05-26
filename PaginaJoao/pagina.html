@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pagina.css">
+    <script src="js.js"></script>  
+
+
+    <title>Resident Evil 2 (1998)</title>
+</head>
+<body>
+
+    
+    <header>
+    <h1>"Resident Evil 2 (1998)"</h1>
+    </header>
+    <div id="imgg">
+    <div id="containerImagem">
+       
+        <img src="ani11.png" class="ativa ani1">
+        <img src="ani22.jpg" class="ani1">
+        <img src="ani33.jpg" class="ani1">
+        <img src="ani44.jpg" class="ani1">
+        <img src="ani55.jpg" class="ani1">
+        <img src="ani66.png" class="ani1">
+
+    </div>
+    </div>
+    <div id="sinopse">Resident Evil 2     <p >Resident Evil 2 conta a trágica história de Raccoon City, que começa alguns meses depois do Incidente da Mansão, onde os membros dos S.T.A.R.S. descobrem as atividades ilegais da Umbrella envolvendo a produção de armas biológicas com o uso do T-Virus. Os sobreviventes do caso tentam alertar a população, mas são desacreditados por seus próprios superiores.
+
+        As nefastas consequências chegam quando o vírus se espalha pela cidade, e pessoas começam a ficar doente em massa. Mas a situação, que já era desesperadora, fica precária, quando as vítimas da epidemia começam a despertar com instintos de canibalismo. Inevitavelmente Raccoon sucumbe a um completo caos, com zumbis e bizarros monstros, além da compreensão humana, perambulando pelas ruas e fazendo mais e mais vítimas se juntarem ao seu exército de mortos vivos.
+        
+        Na noite do dia 29 de Setembro, Leon S. Kennedy, um policial novato do R.P.D., e Claire Redfield, uma universitária em busca de seu irmão desaparecido, chegam na cidade. Percebendo o estranho silêncio nas ruas, Leon é obrigado a parar seu carro quando vê um corpo no meio da rua. Examinando o cadáver, Leon não percebe que está sendo vigiado, mas ao ouvir alguns passos lentos, o rapaz olha para trás e vê várias “pessoas” vindo em sua direção. Elas estavam em decomposição, estavam mortas! Sem escapatória, Leon empunha sua arma e ordena que parem onde estão, mas as elas não obedecem.
+        
+        Já em outro lugar da cidade, em um posto de gasolina ali perto, um sujeito reclama de um ferimento feito por uma daquelas criaturas, saindo em seguida com seu caminhão, sem imaginar o que o destino lhe reservava.
+        
+        Ao chegar na cidade, Claire entra em uma lanchonete e, também notando o local deserto, procura por alguém lá dentro. Mas o que a jovem encontra é um zumbi, devorando um cadáver! Confusa, Claire se afasta, mas a criatura vai em sua direção. Esbarrando na parede, ela olha pelas janelas e vê que a cidade está infestada, e sua única chance é sair pela porta dos fundos.
+        
+        Leon não sabia o que fazer e nem pra onde ir, e inesperadamente, o cadáver que estava examinando agarra seu pé. Não havia outro jeito, se não atirar neles. Recuando sem rumo, ele entra em um beco. O local não tinha saída, apenas uma porta de ferro, que se abre bruscamente. Ele empunha a arma e se prepara para atirar em… Claire! Assustada, a garota pede para que ele não atire, porém ao perceber que estava em perigo, ele pede que ela se abaixe rapidamente, e assim, liquida o morto vivo que a estava perseguindo.
+        
+        Sem cerimônias.
+   
+    </div>
+    <div id="infoAnimation">
+    <div id="containerSprite">
+        <img  id="img1" src="img1.png">   
+    </div>
+    <div id="buttons">
+    <button id="bt_left" onclick="mudarImagemsp1()">CLIQUE</button>
+   
+    </div>
+    </div>
+
+    
+     <script>
+//1° animação
+var proximaImagem = 1;//guarda a posição da imagem que deve entrar na tela, no caso é a imagem da posição 1, pois a imagem 0 já está visível na tela
+var zIndexAtual = 0;//usado para criar um aumento progressivo no z-index
+var imagens = document.getElementById("containerImagem").children;//pega todos os nodos filhos da div #container, ou seja, nossa coleção de imagens
+
+function avancarImagem(){
+    imagem = imagens[proximaImagem];//armazena a proxima imagem na fila em uma variável
+    imagem.style.zIndex = ++zIndexAtual;//aumenta o índice do z-index e atribui à próxima imagem da fila
+    imagem.style.marginLeft = "0%";//reseta a margem da imagem, fazendo ela entrar na tela
+
+    proximaImagem++;//ajusta o índice que aponta a próxima imagem
+
+    //caso o índice tenha alcançado o fim da fila, resetá-lo
+    if(proximaImagem >= imagens.length){
+        proximaImagem = 0;
+    }
+
+    //aqui está o truque para fazer com que as imagens que já passaram voltem para fora da área visível
+    //o tempo de intervalo está aqui para que isso ocorra depois que a imagem ficou atrás da nova imagem da fila
+    setTimeout(resetarImagens,500);
+}
+
+function resetarImagens(){
+    imagemVisivel = proximaImagem -1;
+
+    //se o índice alcançou o início da fila, voltar para o final
+    if(imagemVisivel < 0){
+        //o menos 1 está aqui pois o parâmetro length retorna o total de itens no array (no caso, 3)
+        //precisamos da posição do último item do array (sempre é length-1)
+        imagemVisivel = imagens.length - 1;
+    }
+
+    //retorna todas as imagens à sua posição original, menos a imagem visível
+    for(var i = 0; i < imagens.length; i++){
+        if(i != imagemVisivel){
+            imagens[i].style.marginLeft = "100%";
+        }
+    }
+}
+
+var intervalo = setInterval(avancarImagem,2250);
+let cont=0;
+//fim primeiro animação
+ function mudarImagemsp1(){
+    
+
+    if(cont==0){
+        
+        document.getElementById("img1").src = "img2.jpg";
+        cont++;
+    }else if(cont==1){
+        document.getElementById("img1").src = "img3.jpg";
+        cont++;
+    }else {
+        document.getElementById("img1").src = "img1.png";
+        cont=0;
+    }
+    
+ }
+     </script>
+</body>
+</html>

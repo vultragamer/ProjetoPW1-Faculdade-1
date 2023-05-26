@@ -1,0 +1,29 @@
+body{
+    width: 80%;
+    margin: auto;
+    background-color: #07b8be;
+    background-image:url(Imagens/background.jpg);
+
+    text-align: justify;
+}
+
+h1,h2,h3{
+    background-color: #016464;
+    border-radius: 5px;
+    padding: 4px; 
+    font-size: 40px; 
+    padding-left: 20px;
+    padding-top: 6px;
+    color: #ffffff;
+}
+
+p{
+
+    color: white;
+}
+
+.intruducao{
+background-color: #3e5d63;
+border-radius: 5px;
+padding: 4px;
+}

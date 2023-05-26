@@ -1,0 +1,110 @@
+header{
+    width: 90%;
+    margin: auto;
+   
+  
+}
+
+header h1{
+    background-color:rgb(1, 41, 75);
+    color: white;   
+    padding: 30px 0px 40px 20px;
+    border-radius: 5px;
+   
+    
+    }
+    #imgg{
+        width: 90%;
+        
+        background-color: rgb(0, 67, 122);
+        margin: auto;
+        border-radius: 5px;
+       
+       
+    }
+    #containerImagem{  
+         width: 270px;
+        height: 150px;
+        margin:auto;
+        margin-top: 25px;
+        border-radius: 5px;
+      
+        
+    
+    }
+    
+
+    .ani1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin-left: 100%;
+    
+        -webkit-transition: margin-left 500ms ease-in;
+        -moz-transition: margin-left 500ms ease-in;
+        -o-transition: margin-left 500ms ease-in;
+        transition: margin-left 500ms ease-in;
+    }
+div{
+    overflow:hidden;
+    position: relative;
+    width:350px;
+    height:200px;
+}
+.ativa{
+    margin-left:0%;
+}
+body{
+    background-color: rgb(0, 19, 44);
+    
+}
+
+#sinopse{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    padding:0px 0px 100px 0px;
+    background-color: rgb(0, 67, 122);
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+
+
+#infoAnimation{
+ width: 90%;
+ margin: auto;
+ margin-top: 10px;
+ height: 300px;
+ background-color: rgb(0, 67, 122);
+ border-radius: 5px;
+ text-align: center;
+ 
+
+}
+
+
+
+#containerSprite {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+}
+
+
+#buttons{
+    display:inline-block;
+}
+  #img1{
+    width: 200px;
+    height: 160px;
+    margin: auto;
+    display:inline-block;
+    
+  }
+  
+  .bt_left {
+    float: left;
+  }
+  
+  
